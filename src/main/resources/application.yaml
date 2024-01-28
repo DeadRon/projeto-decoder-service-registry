@@ -5,22 +5,22 @@ spring:
   application:
     name: ead-service-registry
 
-#Define a aplicação como servidor
+#Define a aplicaÃ§Ã£o como servidor
 eureka:
   client:
-    #Evita que a aplicação(ead-service-registry) se torne um cliente eureka dela mesma e garante que esta aplicação seja apenas servidor
-#    Em uma arquitetura típica de microserviços, os serviços individuais se registram com o servidor Eureka para que outros serviços possam descobri-los.
-#    No entanto, o servidor Eureka em si normalmente não precisa se registrar como um cliente dentro do próprio Eureka.
-#    Isso é particularmente importante para evitar que o servidor de registro se liste como um dos serviços disponíveis,
-#    o que pode causar confusão e problemas de roteamento.
+    #Evita que a aplicaÃ§Ã£o(ead-service-registry) se torne um cliente eureka dela mesma e garante que esta aplicaÃ§Ã£o seja apenas servidor
+#    Em uma arquitetura tÃ­pica de microserviÃ§os, os serviÃ§os individuais se registram com o servidor Eureka para que outros serviÃ§os possam descobri-los.
+#    No entanto, o servidor Eureka em si normalmente nÃ£o precisa se registrar como um cliente dentro do prÃ³prio Eureka.
+#    Isso Ã© particularmente importante para evitar que o servidor de registro se liste como um dos serviÃ§os disponÃ­veis,
+#    o que pode causar confusÃ£o e problemas de roteamento.
     registerWithEureka: false
-    #Evita que está aplicação busque um registro no Eureka
-#    Esta configuração diz ao servidor Eureka que ele não precisa buscar informações do registro de serviços do Eureka.
-#    Normalmente, um cliente Eureka (como um microserviço que precisa descobrir outros serviços) busca o registro de serviços
-#    do Eureka para saber sobre outros serviços disponíveis.
-#    No caso do servidor Eureka, essa ação é desnecessária, pois seu papel principal é manter esse registro e disponibilizá-lo
-#    para outros, e não usar o registro para descobrir serviços para seus próprios propósitos.
-#    Em resumo, essas configurações são usadas para definir um aplicativo como um servidor Eureka puro, sem as funções de cliente
-#    que seriam típicas em um microserviço que usa Eureka para descoberta de serviços. Isso ajuda a manter o papel e as
-#    responsabilidades claras na arquitetura de microserviços, com o servidor Eureka agindo estritamente como um registro centralizado de serviços.
+    #Evita que estÃ¡ aplicaÃ§Ã£o busque um registro no Eureka
+#    Esta configuraÃ§Ã£o diz ao servidor Eureka que ele nÃ£o precisa buscar informaÃ§Ãµes do registro de serviÃ§os do Eureka.
+#    Normalmente, um cliente Eureka (como um microserviÃ§o que precisa descobrir outros serviÃ§os) busca o registro de serviÃ§os
+#    do Eureka para saber sobre outros serviÃ§os disponÃ­veis.
+#    No caso do servidor Eureka, essa aÃ§Ã£o Ã© desnecessÃ¡ria, pois seu papel principal Ã© manter esse registro e disponibilizÃ¡-lo
+#    para outros, e nÃ£o usar o registro para descobrir serviÃ§os para seus prÃ³prios propÃ³sitos.
+#    Em resumo, essas configuraÃ§Ãµes sÃ£o usadas para definir um aplicativo como um servidor Eureka puro, sem as funÃ§Ãµes de cliente
+#    que seriam tÃ­picas em um microserviÃ§o que usa Eureka para descoberta de serviÃ§os. Isso ajuda a manter o papel e as
+#    responsabilidades claras na arquitetura de microserviÃ§os, com o servidor Eureka agindo estritamente como um registro centralizado de serviÃ§os.
     fetchRegistry: false
