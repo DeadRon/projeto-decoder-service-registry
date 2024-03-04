@@ -5,6 +5,11 @@ spring:
   application:
     name: ead-service-registry
 
+ead:
+  serviceRegistry:
+    username: serviceRegistry
+    password: 'ead123sr'
+
 #Define a aplicação como servidor
 eureka:
   client:
@@ -24,3 +29,7 @@ eureka:
 #    que seriam típicas em um microserviço que usa Eureka para descoberta de serviços. Isso ajuda a manter o papel e as
 #    responsabilidades claras na arquitetura de microserviços, com o servidor Eureka agindo estritamente como um registro centralizado de serviços.
     fetchRegistry: false
+    service-url:
+      #referencia username e password
+      defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
+
