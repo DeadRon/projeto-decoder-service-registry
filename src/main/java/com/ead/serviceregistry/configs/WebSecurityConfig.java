@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /*
-    cria um bean PasswordEncoder
+    cria um bean PasswordEncoder, usada para tornar as senhas mais seguras
     */
     @Bean
     public PasswordEncoder passwordEncoder(){
