@@ -1,35 +1,5 @@
-server:
-  port: 8761
-
 spring:
+  profiles:
+    active: dev
   application:
     name: ead-service-registry
-
-ead:
-  serviceRegistry:
-    username: serviceRegistry
-    password: 'ead123sr'
-
-#Define a aplicação como servidor
-eureka:
-  client:
-    #Evita que a aplicação(ead-service-registry) se torne um cliente eureka dela mesma e garante que esta aplicação seja apenas servidor
-#    Em uma arquitetura típica de microserviços, os serviços individuais se registram com o servidor Eureka para que outros serviços possam descobri-los.
-#    No entanto, o servidor Eureka em si normalmente não precisa se registrar como um cliente dentro do próprio Eureka.
-#    Isso é particularmente importante para evitar que o servidor de registro se liste como um dos serviços disponíveis,
-#    o que pode causar confusão e problemas de roteamento.
-    registerWithEureka: false
-    #Evita que está aplicação busque um registro no Eureka
-#    Esta configuração diz ao servidor Eureka que ele não precisa buscar informações do registro de serviços do Eureka.
-#    Normalmente, um cliente Eureka (como um microserviço que precisa descobrir outros serviços) busca o registro de serviços
-#    do Eureka para saber sobre outros serviços disponíveis.
-#    No caso do servidor Eureka, essa ação é desnecessária, pois seu papel principal é manter esse registro e disponibilizá-lo
-#    para outros, e não usar o registro para descobrir serviços para seus próprios propósitos.
-#    Em resumo, essas configurações são usadas para definir um aplicativo como um servidor Eureka puro, sem as funções de cliente
-#    que seriam típicas em um microserviço que usa Eureka para descoberta de serviços. Isso ajuda a manter o papel e as
-#    responsabilidades claras na arquitetura de microserviços, com o servidor Eureka agindo estritamente como um registro centralizado de serviços.
-    fetchRegistry: false
-    service-url:
-      #referencia username e password
-      defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
-
